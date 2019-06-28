@@ -1,7 +1,7 @@
 <?php
 
-include_once "..\PP.BARREIRO.SOFIA\\vehiculo.php";
-include_once "..\PP.BARREIRO.SOFIA\\servicio.php";
+include_once "..\apiRestVehiculos-master\\vehiculo.php";
+include_once "..\apiRestVehiculos-master\\servicio.php";
 
 
 
