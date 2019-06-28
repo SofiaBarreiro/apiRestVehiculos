@@ -29,7 +29,7 @@ class vehiculo
 
 
         $vehiculoTxt = "$marca,$modelo,$patenteB,$precio";
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\vehiculo.txt", "r");
 
         while (!feof($myfileTxt)) {
             $texto = fgets($myfileTxt);
@@ -50,7 +50,7 @@ class vehiculo
 
         fclose($myfileTxt);
 
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "a+");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\vehiculo.txt", "a+");
 
         fwrite($myfileTxt, $vehiculoTxt . ",\n");
 
@@ -63,7 +63,7 @@ class vehiculo
     public static function consultarVehiculo($busqueda)
     {
         $nuevo = [];
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\vehiculo.txt", "r");
 
 
         while (!feof($myfileTxt)) {
@@ -107,7 +107,7 @@ class vehiculo
         $nuevo = [];
         if ($vehiculo != null && $servicio != null) {
 
-            $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\turnos.txt", "a+");
+            $myfileTxt = fopen("..\apiRestVehiculos-master\\turnos.txt", "a+");
 
 
             $nuevo = "$fecha,$vehiculo->patente,$vehiculo->marca,$vehiculo->modelo,$vehiculo->precio,$servicio->tipo";
@@ -125,7 +125,7 @@ class vehiculo
     {
 
         $vehiculoRetorno = null;
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\vehiculo.txt", "r");
 
         while (!feof($myfileTxt)) {
             $texto = fgets($myfileTxt);
@@ -152,7 +152,7 @@ class vehiculo
 
         //obtiene un servicio determinado filtrandolo por patente, devuelve un objeto
         $servicioRetorno = null;
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\tipoServicio.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-masterIA\\tipoServicio.txt", "r");
 
         while (!feof($myfileTxt)) {
             $texto = fgets($myfileTxt);
@@ -187,7 +187,7 @@ class vehiculo
     public static function traerVehiculos($patenteB, $marcaA, $modeloA, $precioA, $imagenA)
     {
         $vehiculoOk = [];
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-masterA\\vehiculo.txt", "r");
 
 
         while (!feof($myfileTxt)) {
@@ -227,7 +227,7 @@ class vehiculo
     public static function guardarArray($array)
     {
 
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "w");
+        $myfileTxt = fopen("..\apiRestVehiculos-masterA\\vehiculo.txt", "w");
         $longitud = count($array);
         for ($i = 0; $i < $longitud; $i++) {
 
@@ -244,7 +244,7 @@ class vehiculo
     {
         $file1 = $file['name'];
         $temp_name = $file['tmp_name'];
-        $destination = '..\PP.barreiro.sofia\fotos'.'\\'.$file1;
+        $destination = '..\apiRestVehiculos-mastera\fotos'.'\\'.$file1;
 
         move_uploaded_file($temp_name, $destination);
 
@@ -255,7 +255,7 @@ class vehiculo
     {
         $file1 = $file['name'];
         $temp_name = $file['tmp_name'];
-        $destination = '..\PP.barreiro.sofia\backUpFotos'.'\\'.$file1;
+        $destination = '..\apiRestVehiculos-master\backUpFotos'.'\\'.$file1;
 
         move_uploaded_file($temp_name, $destination);
 
@@ -266,7 +266,7 @@ class vehiculo
     public static function cambiarNombre($file){
 
         $file1 = $file['name'];
-        $nuevoNombre = rename($file1, 'C:\xampp\htdocs\PP.barreiro.sofia\backUpFotos'.'\\'. "nuevaFoto.jpg");
+        $nuevoNombre = rename($file1, '..\\apiRestVehiculos-master\\backUpFotos'.'\\'. "nuevaFoto.jpg");
         return $nuevoNombre;
 
     }
@@ -278,7 +278,7 @@ class vehiculo
     public static function vehiculos()
     {
 
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\vehiculo.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\vehiculo.txt", "r");
         echo "<table>";
         echo "<tr><td>MARCA</td><td>MODELO</td><td>PATENTE</td><td>PRECIO</td><td>IMAGEN</td></tr>";
 
