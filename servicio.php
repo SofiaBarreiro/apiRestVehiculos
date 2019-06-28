@@ -24,7 +24,7 @@ class servicio
     {
 
         $servicioTxt = "$id,$tipo,$precio,$demora";
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\tipoServicio.txt", "a+");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\tipoServicio.txt", "a+");
 
         if ((strcmp($tipo, "10000") == 0) || (strcmp($tipo, "20000") == 0) || (strcmp($tipo, "50000") == 0)) {
 
@@ -40,7 +40,7 @@ class servicio
 
     public static function turnos()
     {
-        $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\turnos.txt", "r");
+        $myfileTxt = fopen("..\apiRestVehiculos-master\\turnos.txt", "r");
         echo "<table>";
         echo "<tr><td>FECHA</td><td>PATENTE</td><td>MARCA</td><td>PRECIO</td><td>TIPO</td></tr>";
         while (!feof($myfileTxt)) {
@@ -62,7 +62,7 @@ class servicio
 
     public static function inscripciones($busqueda){
 
-    $myfileTxt = fopen("..\PP.BARREIRO.SOFIA\\turnos.txt", "r");
+    $myfileTxt = fopen("..\apiRestVehiculos-master\\turnos.txt", "r");
     echo "<table>";
     echo "<tr><td>FECHA</td><td>PATENTE</td><td>MARCA</td><td>PRECIO</td><td>TIPO</td></tr>";
     while (!feof($myfileTxt)) {
